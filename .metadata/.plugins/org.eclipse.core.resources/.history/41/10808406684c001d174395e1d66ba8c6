@@ -1,0 +1,7 @@
+package com.app.lokesh.runner;
+
+import org.springframework.boot.CommandLineRunner;
+
+public class TestRunner implements CommandLineRunner{
+
+}

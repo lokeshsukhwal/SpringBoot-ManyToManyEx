@@ -1,0 +1,24 @@
+package com.app.lokesh.entity;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+public class Student {
+	@Id
+	private Integer stdId;
+	private String stdName;
+	private String stdEmail;
+	
+	@ManyToMany
+	@JoinTable(
+			name="stdcrstab",
+			joinColumns = @JoinColumn(name="sidFk"),
+			inverseJoinColumns = @JoinColumn(name="cidFk")
+			)
+	private List<Course> course;
+}
